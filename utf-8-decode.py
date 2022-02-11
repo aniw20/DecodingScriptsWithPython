@@ -1,0 +1,35 @@
+import colorama
+from colorama import Fore, Back
+import pyperclip as pc
+
+colorama.init()
+
+def colorPrint(color, text):
+	print(color+text+Fore.RESET+Back.RESET)
+
+colorPrint(Fore.GREEN ,"[+] Decode Began!")
+code = input("Enter the code: ")
+colorPrint(Fore.GREEN, f"[*] Your code: {code}")
+colorPrint(Fore.BLUE, "[*] Splitting the code into pieces...")
+
+count = 0
+txts = []
+txt = ""
+for i in code:
+	count += 1
+	txt += i
+	if count >= 2:
+		txts.append(txt)
+		txt = ""
+		count = 0
+
+colorPrint(Fore.YELLOW, f'[-] For debugging: {txts}')
+newCode = b''.fromhex(code).decode('utf-8')
+colorPrint(Fore.GREEN, f'[+] Your Code: {Fore.RED}{newCode}')
+answer = input(Fore.YELLOW+"Do you want to copy to the clipboard?[Y/n] (default 'n'): "+Fore.RESET).lower()
+if not answer in ["y", "n"]:
+	answer = "n"
+
+if answer == "y":
+	pc.copy(newCode)
+	colorPrint(Fore.GREEN,"[+] Successfully copied to the clipboard.")
