@@ -39,7 +39,7 @@ try:
 except pc.PyperclipException:
 	colorPrint(Fore.RED, "[Error] No clipboard mechanisme found on your machine!")
 	colorPrint(Fore.BLUE, f"[*] You can try to download one for example via {Back.WHITE}{Fore.BLACK} apt-get install xsel ")
-	colorPrint(Fore.LIGHTGREEN, f'[+] Take a choice: ')
+	colorPrint(Fore.GREEN, f'[+] Take a choice: ')
 	for i in range(len(inCmds)):
 		print(f'\t{i+1}) {inCmds[i]}')
 
