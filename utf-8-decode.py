@@ -49,3 +49,9 @@ except pc.PyperclipException:
 
 	if choice-1 in range(len(inCmds)):
 		system(inCmds[choice-1])
+		try:
+			pc.copy(newCode)
+			colorPrint(Fore.GREEN,"[+] Successfully copied to the clipboard.")
+		except:
+			colorPrint(Fore.RED, "[Error]Command didn't work, maybe because you are on SSH machine?")
+			exit()
