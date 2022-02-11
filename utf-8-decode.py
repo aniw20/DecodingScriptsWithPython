@@ -5,7 +5,7 @@ from os import system
 
 colorama.init()
 
-inCmds = ["sudo apt-get install xsel", "sudo apt-get install clip"]
+inCmds = ["sudo apt-get install xsel", "sudo apt-get install xclip"]
 
 def colorPrint(color, text):
 	print(color+text+Fore.RESET+Back.RESET)
