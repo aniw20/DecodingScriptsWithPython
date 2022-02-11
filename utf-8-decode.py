@@ -45,7 +45,7 @@ except pc.PyperclipException:
 
 	print(f'\t{len(inCmds)+1}) Not Now!')
 
-	choice = int(input(Fore.BLUE+"So: "))
+	choice = int(input(Fore.BLUE+"So: "+Fore.RESET))
 
 	if choice-1 in range(len(inCmds)):
-		system(inCmds[choice])
+		system(inCmds[choice-1])
