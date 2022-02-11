@@ -35,5 +35,4 @@ try:
 		colorPrint(Fore.GREEN,"[+] Successfully copied to the clipboard.")
 except pc.PyperclipException:
 	colorPrint(Fore.RED, "[Error] No clipboard mechanisme found on your machine!")
-	colorPrint(Fore.BLUE, f"[*] You can try to download one for example via {Back.WHITE}{Fore.BLACK} apt-get install xsel")
-	
+	colorPrint(Fore.BLUE, f"[*] You can try to download one for example via {Back.WHITE}{Fore.BLACK} apt-get install xsel ")
