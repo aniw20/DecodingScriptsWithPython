@@ -5,7 +5,7 @@ from os import system
 
 colorama.init()
 
-inCmds = ["sudo apt-get install xsel"]
+inCmds = ["sudo apt-get install xsel", "sudo apt-get install clip"]
 
 def colorPrint(color, text):
 	print(color+text+Fore.RESET+Back.RESET)
@@ -53,5 +53,5 @@ except pc.PyperclipException:
 			pc.copy(newCode)
 			colorPrint(Fore.GREEN,"[+] Successfully copied to the clipboard.")
 		except:
-			colorPrint(Fore.RED, "[Error]Command didn't work, maybe because you are on SSH machine?")
+			colorPrint(Fore.RED, "[Error] Command didn't work, maybe because you are on SSH machine?")
 			exit()
